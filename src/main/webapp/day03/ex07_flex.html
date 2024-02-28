@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flex</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			main{
+				width: 100%; height: 100vh;
+				background-color: lightcyan;
+			}
+			section{
+				border: 10px solid blue;
+				/* 자기자신은 블록을 유지하면서 자식의 flex 환경 설정 (가로축이 기본이므로 row 생략 가능하지만 넣어주는게 좋음)*/
+				display: flex;										/* 블록 레벨 */
+				/* display: inline-flex;	 */			/* 인라인 레벨 */
+				flex-direction: row;						/* 기본축을 가로로 지정한다 */
+				/* flex-direction: column; */		/* 기본축을 세로로 지정한다 */
+				flex-wrap: wrap;								/* 브라우저의 크기에 따라 자식 요소를 줄바꿈, 크기는 지정한대로 유지된다 */
+				/* flex-wrap: nowrap; */				/* 줄바꿈을 안하면 자식요소의 크기가 줄어든다 */
+				
+				/* 한번에 사용 */
+				/* flex-flow: row wrap;	 */			/* 기본축을 가로로 지정하고 브라우저의 크기에 따라 자식요소를 줄바꿈 한다 */
+			}
+			section article{
+				width: 100px; height: 100px;
+				background-color: aqua;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section>
+				<article></article>
+				<article></article>
+				<article></article>
+				<article></article>
+				<article></article>
+				<article></article>
+			</section>
+		</main>
+	</body>
+</html>

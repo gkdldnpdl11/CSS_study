@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>z-index</title>
+		<style type="text/css">
+			.wrap{
+				width: 400px; height: 400px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				position: relative;
+			}
+			.left{
+				width: 200px; height: 200px;
+				background-color: blue;
+				position: absolute;
+				top: 50px; left: 50px;
+				z-index: 2;
+				opacity: 0.6;
+			}
+			.right{
+				width: 200px; height: 200px;
+				background-color: red;
+				position: absolute;
+				bottom: 50px; right: 50px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			z-index : 1이 가장 낮음, 바닥에 깔리는 것, 숫자가 높을수록 위로 올라옴 
+			opacity : 0~1 의 요소의 투명도를 지정한다. 0=투명, 1=불투명
+		-->
+		<div class="wrap">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>position-absolute</title>
+		<style type="text/css">
+			*{		/* margin=8px;가 있어서 초기화 적용 */
+				margin: 0px;
+				padding: 0px;
+			}
+			.wrap{
+				width: 800px;
+				border: 5px solid black;
+				margin: 50px auto;
+			}
+			.wrap::after{
+				content: ' ';
+				display: block;
+				clear: both;
+			}
+			.left{
+				width: 400px; height: 400px;
+				background-color: lightgreen;
+				float: left;
+			}
+			.right{
+				width: 400px; height: 400px;
+				background-color: lightblue;
+				float: left;
+				/* position: relative; */			/* box의 부모 position이 존재하므로 부모 position에 적용됨 */
+			}
+			.box{
+				width: 100px; height: 100px;
+				background-color: red;
+				position: absolute;
+				right: 20px;
+				bottom: 30px;		/* 부모의 position이 없으므로 body에 적용됨 */
+			}
+			.bottom{
+				/* clear: both; */		/* ::after를 사용하지 않으면 footer에 clear: both를 사용하면됨 */
+				width: 800px; height: 100px;
+				background-color: pink;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="left">
+			</div>
+		
+			<div class="right">
+				<p class="box"></p>
+			</div>
+		
+			<div class="bottom"></div>
+		</div>
+	</body>
+</html>

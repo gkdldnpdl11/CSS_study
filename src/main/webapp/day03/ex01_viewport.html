@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>반응형 웹 - viewport</title>
+			<!--
+				따로 글자 크기를 지정해주지 않으면 부모의 글자크기를 상속받는다. 
+				부모와 자식 둘 다 글자 크기를 지정하지 않으면 html의 기본 크기인 16px이 된다
+			-->
+		<style type="text/css">
+			*{margin: 0px; padding: 0px;}
+			.outer{
+				font-size: 24px;
+			}
+			.inner{
+				/* font-size: 2rem; */				/* html의 크기를 그대로 상속받아서 기본 1rem의 크기는 16px이다 (16*2=32) */
+				font-size: 2em;								/* 부모의 크기를 참조하기 때문에 위에서 지정한 24px의 크기를 상속받아 24px이 된다 (24*1.5=36) */
+				width: 200px; height: 200px;
+				display: inline-block;
+				background-color: tomato;
+				
+				/* 
+					rem margin & padding : html의 크기를 기준으로 계산한다
+						현재 글자크기 2em = 48px;
+						html 기본 글자 크기 = 16px;
+						margin : 1em = 16px;
+						padding : 1em = 16px;
+				*/ 
+				/* margin: 1rem;
+				padding: 1rem; */
+				
+				/* 
+					em margin & padding : 현재 자신의 글자 크기를 기준으로 계산한다
+						현재 글자크기 2em=48px;
+						margin : 1em = 48px;
+						padding : 1em = 48px;
+				*/
+				/* margin: 1em;
+				padding: 1em; */
+			}
+			p{
+				/* font-size: 10vw; */		/* 화면 너비에 10% (백분율) 100px=10px; */
+				/* font-size: 10vh; */			/* 화면 높이에 10% (백분율) 100px=10px; */
+				font-size: 10vmin;				/* 화면 너비 or 높이에 10% (백분율), 둘 중 작은 것을 따라감 vmax는 반대로 큰 것에 따라감 */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			1. 반응형 웹 디자인을 하기 위한 기본적으로 알아둬야 할 것이 view port 이다
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					너비를 디바이스(장치)의 기준으로 초기 화면 배율은 원 상태로 유지한다 (화면에 나오는 그대로 보여주겠다는 뜻임), 1대1 배율을 뜻함
+					
+			2. rem과 em 글자 크기 지정 (상대 크기)
+				- rem : root(html)의 크기를 이용하는 것
+				- em : 부모의 크기를 참조하는 것
+				
+			3. vw, vh, vmax, vmin
+				1) vw : 화면 너비의 백분율을 맞춘다
+				2) vh : 화면 높이의 백분율을 맞춘다
+				3) vmax : 화면 크기에 너비와 높이 중 큰 것에 백분율을 맞춘다
+				4) vmin : 화면 크기에 너비와 높이 중 작은 것에 백분율을 맞춘다
+		-->
+		<h1>Hello World</h1>
+		<div class="outer">
+			<!-- html, <p> 기본 글자 크기 : 16px -->
+			<div class="inner">고양이</div>
+			<div class="inner">강아지</div>
+			<!-- <p>고양이와 강아지는 형제이며, 계층적 구조라고 한다. 부모는 outer.<br> p태그의 크기를 outer를 상속받아 글자 크기 24px이고
+					고양이와 강아지는 outer의 24px을 상속받아 1.5em을 지정. 글자 크기 36px이 되었다</p> -->
+		</div>
+		<p>한국 ICT 인재 개발원</p>
+	</body>
+</html>

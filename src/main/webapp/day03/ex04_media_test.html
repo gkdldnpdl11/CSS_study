@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>media query test</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box; 
+				margin: 0px; 
+				padding: 0px;
+			}
+			.left{
+				width: 20%;
+				background-color: blue;
+				padding: 20px;
+				float: left;
+			}
+			.main{
+				width: 60%;
+				background-color: lightgray;
+				padding: 20px;
+				float: left;
+			}
+			.right{
+				width: 20%;
+				background-color: green;
+				padding: 20px;
+				float: left;
+			}
+			/* left, right, main 3개 전부 다 적용 시키기 때문에 띄어쓰기가 아니라 쉼표 사용해야함 */
+			@media screen and (max-width: 800px) {
+				/* left, right, main의 부모는 body이므로 100%는 너비가 화면에 꽉 차도록 반환한다는 뜻 */
+				.left, .right, .main{	width: 100%;}
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Media Query</h2>
+		<p>Make sure you browser window</p>
+		<p>Make sure you reach the breakpoint at 800px when resizing this frame.</p>
+		<div class="left">
+			<p>Left Menu</p>
+		</div>
+		
+		<div class="main">
+			<p>Main Content</p>
+		</div>
+		
+		<div class="right">
+			<p>Right Content</p>
+		</div>
+	</body>
+</html>

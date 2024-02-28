@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>position-test01</title>
+		<style type="text/css">
+			#a{
+				width: 400px; height: 200px;
+				background-color: orange;
+				float: left;
+			}
+			#b{
+				width: 400px; height: 50px;
+				background-color: skyblue;
+				float: left;
+				clear: both;
+			}
+			#c{
+				width: 40px; height: 40px;
+				background-color: black;
+				position: fixed;
+				right: 20px; bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a"></div>
+		<div id="b">
+			<section id="c"></section>
+		</div>
+	</body>
+</html>

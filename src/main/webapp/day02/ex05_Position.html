@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Position</title>
+		<style type="text/css">
+			section{width: 600px; height: 200px;}
+			section:nth-of-type(1) {background-color: pink;}
+			section:nth-of-type(2) {
+				background-color: lightblue; 
+				position: relative; 
+				top: -100px; 
+				left: 100px;
+			}
+			/* position 을 사용하지 않아서 static 적용, 문서의 흐름을 거스르지 않기 때문에 
+				위에서 변경된 position 에 이어서 생성되는 것이 아니라 문서의 흐름대로 생성된다 */
+			section:nth-of-type(3) {background-color: lightgray;}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			position 은 위치를 지정하는 속성
+				1) static : 기본값, 문서의 흐름을 거스르지 않는다, 다른 요소와 겹치지 않음
+										top, bottom, left, right 속성에 영향을 받지 않는다 
+										따로 사용하지 않으면 기본적으로 적용
+				2) relative : 원래 위치값에서 top, bottom, left, right 이동, 문서의 흐름을 거스른다, 아래 요소는 원래 흐름에 거스르지 않는다
+						ex) 일정 영역을 겹치게 만들 수 있다
+				3) absolute : 일반적인 문서 흐름을 제거하고, 가장 가까운 부모 position 기준으로 상대적으로 위치 지정
+											만약에 position 이 없으면, body 를 기준으로 한다 (절대 위치 좌표 설정이 된다) => 부모 태그가 없으면 body 가 부모 태그
+				4) fixed : 일반적인 문서 흐름을 제거하고, 지정한 위치를 고정한다 (절대 좌표), 웹 브라우저를 기준으로 좌표 고정이다
+				5) sticky : 일반적인 문서 흐름을 제거하고, scroll 동작이 존재하는 가장 가까운 요소의 위치를 지정한다(top, bottom)
+		-->
+		<section></section>
+		<section></section>
+		<!-- <p> 사용하면 3번 section 은 <p>가 종료되고 난 후 영역 생성을 한다, 문서 흐름을 거스르지 않기 때문 -->
+		<p>한국 ICT 인재 개발원</p>	
+		<section></section>
+	</body>
+</html>

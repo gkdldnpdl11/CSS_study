@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Layout-test3</title>
+		<style type="text/css">
+			.wrap{margin: 0px auto;}
+			.wrap .left{width: 30%; height: 400px; background-color: pink; float: left;}
+			.wrap .center{width: 40%; height: 400px; background-color: green; float: left;}
+			.wrap .right{width: 30%; height: 400px; background-color: lightblue; float: left;}
+			.wrap::after{content: '';	display: block;	clear: both;	}
+			
+			#header{
+				background-color: lightgray; 
+				padding: 30px; 
+				text-align: center; 
+				font-size: 30px; 
+				color: white;
+			}
+			#footer{
+				background-color: lightgray;
+				padding: 10px; 
+				text-align: center; 
+				font-size: 20px; 
+				color: white;
+			}
+			#nav{
+				list-style-type: none;
+				overflow: hidden; 
+				padding: 0px;
+				margin: 0px;
+			}
+			#nav ul{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+				display: inline-block;
+			}
+			#nav ul li{
+				color: black;;
+				padding: 0px  20px;
+				margin: 30px 20px;
+				float: left;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>header</h1>
+		</div>
+		
+		<div id="nav">
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+			</ul>
+		</div>
+
+		<div class="wrap">
+			<section class="left"></section>		
+			<section class="center"></section>
+			<section class="right"></section>
+		</div>
+		
+		<div id="footer">
+			<p>footer</p>
+			<p>footer</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>grid</title>
+		<style type="text/css">
+			#wrapper{
+				width: 700px;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, 100px);
+				/* 공백은 .(점)으로 표현
+					grid-area 로 설정을 하면 무조건 포함해야 한다. 포함하지 않을 시 브라우저 상에서 포함되지 않은 것만 나옴*/
+				grid-template-areas: 
+					"box1 box1 box2"
+					"box3 box3 box2"
+					"box4 . box2"	;
+			}
+			.box{
+				padding: 15px;
+				color: white;
+				font-weight: bold;
+				text-align: center;
+			}
+			.box1{
+				background-color: lightblue;
+				grid-area: box1;
+			}
+			.box2{
+				background-color: lightgreen;
+				grid-area: box2;
+			}
+			.box3{
+				background-color: orange;
+				grid-area: box3;
+			}
+			.box4{
+				background-color: lightpink;
+				grid-area: box4;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="box box1">box1</div>
+			<div class="box box2">box2</div>
+			<div class="box box3">box3</div>
+			<div class="box box4">box4</div>
+		</div>
+	</body>
+</html>

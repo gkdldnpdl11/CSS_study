@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>page_size</title>
+		<style type="text/css">
+			#p1{border: 1px solid red; width: 100px; height: 100px;}
+			#s1{border: 1px solid blue; width: 100px; height: 100px;}		/* 인라인레벨은 영역지정이 안됨, 여유 영역이 없기 때문 */
+			
+			div{border: 2px solid gray;}
+			article{border: 1px solid red;}
+			article:nth-of-type(1) {width: 100px; height: 100px;}
+			article:nth-of-type(2) {width: 20%; height: 20%;}
+			article:nth-of-type(3) {width: 10vw; height: 10vw;}
+			article:nth-of-type(4) {width: 10vh; height: 10vh;}
+			
+			.c1{border: 2px solid blue;}
+			.c1 article{width: 50px; height: 30px; border: 1px solid red;}
+			.c1 article:nth-of-type(1) {margin: 20px; padding: 10px;}								/* 상하좌우 20px, 안쪽 여백 10px */
+			.c1 article:nth-of-type(2) {margin: 20px 50px; padding: 10px 20px;}		/* 상하 20px, 좌우 50px */
+			.c1 article:nth-of-type(3) {margin: 20px auto; padding: 10px;}					/* 상하 20px, 중앙 정렬(위치: 좌우) */
+			.c1 article:nth-of-type(4) {margin: 20px auto 40px; padding: 10px;}		/* 상 20px, 중앙 정렬(위치: 좌우) , 하 40px */
+			.c1 article:nth-of-type(5) {margin: 0px 10px 20px 30px;}								/* 상 0px, 우 10px, 하 20px, 좌 30px // 시계방향으로 돌림 */
+			.c1 article:nth-of-type(6) {margin-left: 20px;}														/* 왼쪽만 20px */
+			.c1 article:nth-of-type(7) {margin-right: 20px;}													/* 오른쪽만 20px */
+			.c1 article:nth-of-type(8) {margin-top: 20px;}														/* 위쪽만 20px */
+			.c1 article:nth-of-type(9) {margin-bottom: 20px;}											/* 아래쪽만 20px */
+			
+			#mybox-1, #mybox-2{width: 100px; height: 100px; border: 1px solid red; margin: 100px;}
+			#mybox-1{width: 98px; height: 98px; padding: 0px;}
+			#mybox-2{padding: 30px; box-sizing: border-box;}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			1. width & height : 블록 레벨에서만 사용, 인라인에서는 사용 못한다
+					width & height : px = 절대 크기
+													   % = 상대 크기, 부모 태그 기준, 너비는 동작하지만 높이는 동작하지 않는다
+													   vw = 상대 크기, 웹 브라우저 너비 기준(백분율로 지정 = 너비/100), 너비를 기준으로 동작한다
+													   vh = 상대 크기, 웹 브라우저 높이 기준(백분율로 지정=높이/100), 높이를 기준으로 동작한다
+													   ex) width=800px, height=1000px // 1vw = 8px, 1vh = 10px
+			2. margin : 바깥쪽 여백
+			3. padding : 안쪽 여백
+			4. box-sizing : content-box : 텍스트 크기를 지정하므로 padding을 주면 크기가 커진다
+										   border-box : padding, border 크기까지 포함된 영역을 지정한다
+					border-style : solid(실선), dashed(짧은 직선), dotted(점선)
+		-->
+		<p id="p1">block level</p>
+		<span id="s1">inline level element</span>
+		<hr>
+		<div>
+			<article>100px</article>
+			<article>20%</article>
+			<article>10vw</article>
+			<article>10vh</article>
+		</div>
+		<hr>
+		<img src="../images/img01.png">
+		<div class="c1">
+			<article>box1</article>
+			<article>box2</article>
+			<article>box3</article>
+			<article>box4</article>
+			<article>box5</article>
+			<article>box6</article>
+			<article>box7</article>
+			<article>box8</article>
+			<article>box9</article>
+		</div>
+		<hr>
+		
+		<div id="mybox-1">Mybox1</div>
+		<div id="mybox-2">Mybox2</div>
+	</body>
+</html>

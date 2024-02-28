@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>linear-gradient</title>
+		<style type="text/css">
+			div {
+				width: 200px; height: 200px;
+				margin: 50px; float: left;
+			}
+			/* 
+				linear-gradient(방향, 색상1, 색상2, ...); = 직선 모양의 그라디언트 (색상은 계속 추가 할 수 있다)
+				radial-gradient(색상1, 색상2, ...); = 원형 모양의 그라디언트 (색상은 계속 추가 할 수 있다)
+			*/
+			div:nth-of-type(1) {background: linear-gradient(to bottom, blue, red, green, yellow, black, white,lime,olive);}
+			div:nth-of-type(2) {background: linear-gradient(to top, blue, red);}
+			div:nth-of-type(3) {background: linear-gradient(to right, blue, red);}
+			div:nth-of-type(4) {background: linear-gradient(to left, blue, red);}
+			div:nth-of-type(5) {background: linear-gradient(45deg, blue, red);}
+			/* 
+				1 : 아래쪽 방향으로
+				2 : 위쪽 방향으로
+				3 : 오른쪽 방향으로
+				4 : 왼쪽 방향으로
+				5 : 45도 각도의 방향으로
+			*/
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

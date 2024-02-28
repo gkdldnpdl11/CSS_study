@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>가상 선택자 이용 방법</title>
+		<style type="text/css">
+			.container{
+				width: 960px;
+				margin: 0 auto;
+			}
+			.nav{
+				width: 960px;
+				height: 60px;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #ccc;
+			}
+			.nav ul{
+				list-style-type: none;
+				padding: 10px 0px;
+			}
+			.nav ul li{
+				display: inline-block;
+				width: 150px;
+				padding: 10px;
+			}
+			.nav a:link, .nav a:visited{
+				text-decoration: none;
+				font-size: 1rem;
+				padding: 10px;
+			}
+			.nav a:hover {
+				background-color: black;
+				color: white;
+			}
+			.contents{
+				width: 400px;
+				margin: 30px auto;
+				padding: 20px;
+				border: 1px solid black;
+				border-radius: 10px;
+			}
+			#intro:target {
+				background-color: skyblue;
+				color: white;
+			}
+			#room:target {
+				background-color: orange;
+				color: white;
+			}
+			#reservation:target {
+				background-color: tomato;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="nav">
+				<ul>
+					<li><a href="#intro">이용 안내</a> </li>
+					<li><a href="#room">객실 소개</a> </li>
+					<li><a href="#reservation">예약 방법 및 요금</a> </li>
+					<li><a href="hw02.html">예약 하기</a> </li>
+				</ul>
+			</nav>
+			<div id="intro" class="contents">
+				<h2>이용 안내</h2>
+				<p>Excepteur do est eusmod nulla et veniam. Labore officia officia ex aliqua exercitation aliqua laborum 
+						Lorem deserunt ut ullamco labore anim. Officia eu duis aliquip incididunt. 
+						Do laborum et consequat aliqua sint consectrtur.</p>
+			</div>
+			<div id="room" class="contents">
+				<h2>객실 소개</h2>
+				<p>Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cilum tempor minim fugiat est dolor.
+						Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore.
+						Sit in non fugiat minim sit.
+			</div>
+			<div id="reservation" class="contents">
+				<h2>예약 방법 및 요금</h2>
+				<p>Fugiat aliquip mollit proident velit magna esse ea officia eu. Esse do aliqua proident culpa eismod duis
+						minim deserunt eu reprehenderit ut tempor.
+			</div>
+		</div>
+	</body>
+</html>
+
+<!-- 시험문제 출제 네비게이션바 -->

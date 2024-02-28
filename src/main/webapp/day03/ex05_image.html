@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>image</title>
+		<style type="text/css">
+			div{
+				width: 50%;
+			}
+			img{
+				/* width: 100%; */
+				/* 최대 640px 이상으로 커지지 않는다 */
+				/* max-width: 640px; */
+				
+				/* 자기 자신의 크기 100% */
+				/* img는 div의 자식이기 때문에 div의 너비 50% 영역안에서 자기자신의 크기는 100%까지만 유지됨
+					화면의 크기가 일정 이상 커져도 img의 크기는 100% 초과가 되지 않는다 */
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img alt="image" src="../images/bear.jpg">
+		</div>
+	</body>
+</html>

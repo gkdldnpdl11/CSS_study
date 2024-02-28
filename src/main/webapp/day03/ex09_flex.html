@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flex order</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			section{
+				width: 100%;
+				background-color: lightcyan;
+				display: flex;
+				justify-content: center;
+			}
+			section article{
+				width: 10vw; height: 10vh;
+				background-color: aqua;
+				border: 1px solid black;
+				font-size: 3em;
+				color: white;
+				display: flex;
+				justify-content: center;		/* 상하 */
+				align-items: center;				/* 좌우 */
+			}
+			section article:nth-of-type(1) {order: 2;}
+			section article:nth-of-type(2) {order: 3;}
+			section article:nth-of-type(3) {order: 1;}
+		</style>
+	</head>
+	<body>
+		<section>
+			<article>1</article>
+			<article>2</article>
+			<article>3</article>
+		</section>
+	</body>
+</html>
